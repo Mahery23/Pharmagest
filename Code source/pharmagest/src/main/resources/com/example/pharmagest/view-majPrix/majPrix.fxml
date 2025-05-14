@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="754.0" prefWidth="1147.0" style="-fx-background-color: linear-gradient(to bottom right, #2C3E50, #34495E);" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pharmagest.MajPrix.majPrixController.majPrixController">
+    <children>
+        <BorderPane prefHeight="759.0" prefWidth="1152.0">
+            <right>
+                <AnchorPane prefHeight="759.0" prefWidth="1371.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <!-- Titre -->
+                        <Label layoutX="500.0" layoutY="25.0" style="-fx-text-fill: white; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 10, 0, 0, 2);" text="Mise à jour des Prix">
+                            <font>
+                                <Font name="Segoe UI Light" size="49.0" />
+                            </font>
+                        </Label>
+
+                        <!-- Section de mise à jour -->
+                        <Rectangle arcHeight="15.0" arcWidth="15.0" fill="#ffffff" height="64.0" layoutX="194.0" layoutY="152.0" opacity="0.95" stroke="TRANSPARENT" strokeType="INSIDE" style="-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 3);" width="990.0" />
+                        
+                        <HBox alignment="CENTER_LEFT" layoutX="247.0" layoutY="170.0" spacing="15">
+                            <Label style="-fx-font-weight: bold;" text="Médicament :" />
+                            <MenuButton fx:id="medicamentMenuButton" prefWidth="200.0" style="-fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: #ecf0f1; -fx-border-width: 1;" text="Choisir un médicament" />
+                            
+                            <Label style="-fx-font-weight: bold;" text="Type de prix :" />
+                            <MenuButton fx:id="menuButton" style="-fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: #ecf0f1; -fx-border-width: 1;" text="Choisir le type">
+                                <items>
+                                    <MenuItem fx:id="prixAchatMenuItem" text="Prix Achat" />
+                                    <MenuItem fx:id="prixVenteMenuItem" text="Prix Vente" />
+                                </items>
+                            </MenuButton>
+                            
+                            <Label style="-fx-font-weight: bold;" text="Nouveau prix :" />
+                            <TextField fx:id="newValueTextField" prefWidth="150" promptText="Nouveau prix..." style="-fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: #ecf0f1; -fx-border-width: 1;" />
+                            
+                            <Button fx:id="updateButton" onAction="#uptdateButtonOnAction" style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-background-radius: 5; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 5, 0, 0, 1);" text="Mettre à jour" />
+                        </HBox>
+
+                        <!-- TableView -->
+                        <Rectangle arcHeight="15.0" arcWidth="15.0" fill="#ffffff" height="498.0" layoutX="195.0" layoutY="227.0" opacity="0.95" stroke="TRANSPARENT" strokeType="INSIDE" style="-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 3);" width="989.0" />
+                        <TableView fx:id="medicamentsTableView" layoutX="216.0" layoutY="243.0" prefHeight="465.0" prefWidth="963.0" style="-fx-background-color: transparent; -fx-border-color: transparent;">
+                            <columns>
+                                <TableColumn fx:id="colID" minWidth="0.0" prefWidth="0.0" style="-fx-alignment: CENTER;" text="ID" />
+                                <TableColumn fx:id="colNom" prefWidth="267.0" style="-fx-alignment: CENTER;" text="Nom" />
+                                <TableColumn fx:id="colPrixAchat" prefWidth="147.0" style="-fx-alignment: CENTER;" text="Prix achat (Rs)" />
+                                <TableColumn fx:id="colPrixVente" prefWidth="149.0" style="-fx-alignment: CENTER;" text="Prix vente (Rs)" />
+                                <TableColumn fx:id="colFamille" prefWidth="185.0" style="-fx-alignment: CENTER;" text="Famille" />
+                                <TableColumn fx:id="colDosage" prefWidth="79.0" style="-fx-alignment: CENTER;" text="Dosage" />
+                                <TableColumn fx:id="colFormeMedicament" prefWidth="134.0" style="-fx-alignment: CENTER;" text="Forme" />
+                            </columns>
+                        </TableView>
+
+                        <!-- Bouton Retour -->
+                        <Button fx:id="retourButton" layoutX="1286.0" layoutY="25.0" onAction="#retourButtonOnClick" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-background-radius: 5; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 5, 0, 0, 1);" text="Retour" />
+                    </children>
+                </AnchorPane>
+            </right>
+        </BorderPane>
+    </children>
+</AnchorPane>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="756.0" prefWidth="1372.0" style="-fx-background-color: #AED6F1;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pharmagest.maintenance.maintenanceController.maintenanceController">
+   <top>
+        <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="756.0" prefWidth="1147.0" style="-fx-background-color: #8f9c91;" BorderPane.alignment="CENTER">
+            <children>
+                <Button fx:id="Fournisseur" layoutX="959.0" layoutY="510.0" mnemonicParsing="false" onAction="#FournisseurOnClick" prefHeight="29.0" prefWidth="380.0" style="-fx-background-color: #04620f;" text="Fournisseur" textFill="#f8f8f8" />
+                <Button fx:id="Utilisateur" layoutX="45.0" layoutY="508.0" mnemonicParsing="false" onAction="#UtilisateurOnClick" prefHeight="30.0" prefWidth="225.0" style="-fx-background-color: #04620f;" text="Utilisateur" textFill="#f8f8f8" />
+                <Button fx:id="maj" layoutX="584.0" layoutY="510.0" mnemonicParsing="false" onAction="#majOnClick" prefHeight="30.0" prefWidth="324.0" style="-fx-background-color: #04620f;" text="MAJ des prix" textFill="#f8f8f8" />
+                <ImageView fitHeight="228.0" fitWidth="383.0" layoutX="959.0" layoutY="283.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../image/fournisseur.jpg" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="224.0" fitWidth="226.0" layoutX="45.0" layoutY="285.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../image/utilisateurs.jpg" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="228.0" fitWidth="338.0" layoutX="584.0" layoutY="283.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/Billan.jpg" />
+               </image></ImageView>
+                <Button fx:id="RetourDashboard" layoutX="1265.0" layoutY="32.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#RetourDashboardOnClick" prefHeight="25.0" prefWidth="67.0" style="-fx-background-color: red;" text="Retour" textFill="WHITE" />
+            <Button fx:id="Medicaments" layoutX="309.0" layoutY="510.0" mnemonicParsing="false" onAction="#MedicamentsOnClick" prefHeight="30.0" prefWidth="229.0" style="-fx-background-color: #04620f;" text="Medicament" textFill="#f8f8f8" />
+            <ImageView fitHeight="228.0" fitWidth="240.0" layoutX="309.0" layoutY="283.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/Medoc.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="523.0" layoutY="25.0" prefHeight="123.0" prefWidth="360.0" text="Maintenance" textFill="#04620f">
+               <font>
+                  <Font name="Bodoni MT" size="60.0" />
+               </font>
+            </Label>
+            </children>
+        </AnchorPane>
+   </top>
+</BorderPane>

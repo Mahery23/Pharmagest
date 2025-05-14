@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="759.0" prefWidth="1371.0" style="-fx-background-color: linear-gradient(to bottom right, #2C3E50, #34495E);" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pharmagest.ligneVente.ligneVenteController.ligneVenteController">
+   <children>
+      <Rectangle arcHeight="15.0" arcWidth="15.0" fill="#ffffff" height="475.0" layoutX="17.0" layoutY="209.0" opacity="0.95" stroke="TRANSPARENT" strokeType="INSIDE" style="-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 3);" width="705.0" />
+      <Rectangle arcHeight="15.0" arcWidth="15.0" fill="#ffffff" height="475.0" layoutX="740.0" layoutY="210.0" opacity="0.95" stroke="TRANSPARENT" strokeType="INSIDE" style="-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 3);" width="620.0" />
+      <ImageView fitHeight="165.0" fitWidth="274.0" layoutX="24.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/Caisse.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="673.0" layoutY="40.0" prefHeight="71.0" prefWidth="121.0" style="-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 10, 0, 0, 2);" text="Vente" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Segoe UI Light" size="49.0" />
+         </font>
+      </Label>
+      <Label layoutX="753.0" layoutY="224.0" prefHeight="24.0" prefWidth="236.0" style="-fx-text-fill: #2C3E50;">
+         <font>
+            <Font name="Segoe UI Semibold" size="20.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#75fc87" height="40.0" layoutX="513.0" layoutY="217.0" stroke="TRANSPARENT" strokeType="INSIDE" style="-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0, 0, 1);" width="202.0" />
+      <RadioButton fx:id="ordonanceRadio" layoutX="529.0" layoutY="227.0" mnemonicParsing="false" onAction="#ventePrescrisOnClick" style="-fx-text-fill: #2C3E50;" text="Vente avec ordonance" textFill="#f8eded">
+         <font>
+            <Font name="Segoe UI" size="15.0" />
+         </font>
+      </RadioButton>
+      <!-- Tableau des médicaments -->
+      <TableView fx:id="medicamentsTableView" layoutX="28.0" layoutY="266.0" prefHeight="359.0" prefWidth="686.0" style="-fx-background-color: transparent; -fx-border-color: transparent;">
+         <columns>
+            <TableColumn fx:id="colID" minWidth="0.0" prefWidth="0.0" style="-fx-alignment: CENTER;" text="ID" />
+            <TableColumn fx:id="colNom" prefWidth="176.0" style="-fx-alignment: CENTER;" text="Nom" />
+            <TableColumn fx:id="colPrixVente" prefWidth="61.0" style="-fx-alignment: CENTER;" text="Prix " />
+            <TableColumn fx:id="colStock" minWidth="0.0" prefWidth="45.333343505859375" style="-fx-alignment: CENTER;" text="Stock" />
+            <TableColumn fx:id="colPrescription" prefWidth="73.66665649414062" style="-fx-alignment: CENTER;" text="Prescription" />
+            <TableColumn fx:id="colFamille" minWidth="0.0" prefWidth="127.33334350585938" style="-fx-alignment: CENTER;" text="Famille" />
+            <TableColumn fx:id="colDosage" minWidth="0.0" prefWidth="83.33331298828125" style="-fx-alignment: CENTER;" text="Dosage" />
+            <TableColumn fx:id="colFormeMedicament" prefWidth="116.0" style="-fx-alignment: CENTER;" text="Forme" />
+         </columns>
+      </TableView>
+      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#399afc" height="40.0" layoutX="284.0" layoutY="217.0" stroke="TRANSPARENT" strokeType="INSIDE" style="-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0, 0, 1);" width="202.0" />
+      <RadioButton fx:id="venteLibreRadio" layoutX="300.0" layoutY="227.0" mnemonicParsing="false" onAction="#venteLibreRadioOnClick" style="-fx-text-fill: #2C3E50;" text="Vente sans ordonance">
+         <font>
+            <Font name="Segoe UI" size="15.0" />
+         </font>
+      </RadioButton>
+      <TextField fx:id="rechercheTextField" layoutX="29.0" layoutY="229.0" prefHeight="25.0" prefWidth="131.0" style="-fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: #ecf0f1; -fx-border-width: 1;" />
+      <TextField fx:id="quantiteTextField" layoutX="29.0" layoutY="644.0" prefHeight="25.0" prefWidth="75.0" promptText="quantités.." style="-fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: #ecf0f1; -fx-border-width: 1;" />
+      <Button fx:id="addButtonLigneVente" layoutX="110.0" layoutY="644.0" mnemonicParsing="false" onAction="#addButtonLigneVenteOnAction" style="-fx-background-color: #27ae60; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 5, 0, 0, 1);" text="Ajouter" textFill="WHITE" />
+      <TableView fx:id="ligneVenteTableView" layoutX="750.0" layoutY="221.0" prefHeight="406.0" prefWidth="603.0" style="-fx-background-color: transparent; -fx-border-color: transparent;">
+         <columns>
+            <TableColumn fx:id="colIDLigneVente" minWidth="0.0" prefWidth="0.0" style="-fx-alignment: CENTER;" text="ID" />
+            <TableColumn fx:id="colVenteID" minWidth="0.0" prefWidth="0.0" style="-fx-alignment: CENTER;" text="Vente ID" />
+            <TableColumn fx:id="colMedicamentID" prefWidth="150.0" style="-fx-alignment: CENTER;" text="Médicament" />
+            <TableColumn fx:id="colQuantite" prefWidth="140.0" style="-fx-alignment: CENTER;" text="Quantites" />
+            <TableColumn fx:id="colPrixUnit" prefWidth="127.0" style="-fx-alignment: CENTER;" text="Prix Unitaire" />
+            <TableColumn fx:id="colPrescriptionID" minWidth="0.0" prefWidth="0.0" style="-fx-alignment: CENTER;" text="Prescription" />
+            <TableColumn fx:id="colTypeVente" prefWidth="185.0" style="-fx-alignment: CENTER;" text="Type de Vente" />
+         </columns>
+      </TableView>
+      <Button fx:id="addButtonVente" layoutX="1293.0" layoutY="643.0" mnemonicParsing="false" onAction="#addButtonVenteOnAction" style="-fx-background-color: #27ae60; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 5, 0, 0, 1);" text="Envoyer" textFill="WHITE" />
+      <Button fx:id="RetourDashboard" layoutX="1297.0" layoutY="21.0" mnemonicParsing="false" onAction="#RetourDashboardOnClick" style="-fx-background-color: #e74c3c; -fx-background-radius: 5; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 5, 0, 0, 1);" text="Retour" textFill="WHITE" />
+      <Button fx:id="clearLigneVenteButton" layoutX="748.0" layoutY="644.0" mnemonicParsing="false" onAction="#clearLigneVenteButtonOnClick" style="-fx-background-color: #e74c3c; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 5, 0, 0, 1);" text="Annuler la vente" textFill="WHITE" />
+      <ImageView fitHeight="24.0" fitWidth="21.0" layoutX="165.0" layoutY="231.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/icons8-recherche-100.png" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="15.0" arcWidth="15.0" fill="#f8f9fa" height="31.0" layoutX="17.0" layoutY="177.0" stroke="TRANSPARENT" strokeType="INSIDE" style="-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0, 0, 1);" width="281.0" />
+      <Label layoutX="41.0" layoutY="181.0" prefHeight="30.0" prefWidth="216.0" style="-fx-text-fill: #2C3E50;" text="Medicaments stock">
+         <font>
+            <Font name="Segoe UI Semibold" size="20.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="15.0" arcWidth="15.0" fill="#f8f9fa" height="31.0" layoutX="740.0" layoutY="177.0" stroke="TRANSPARENT" strokeType="INSIDE" style="-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0, 0, 1);" width="281.0" />
+      <Label layoutX="764.0" layoutY="181.0" prefHeight="30.0" prefWidth="251.0" style="-fx-text-fill: #2C3E50;" text="Medicaments sélectionnés">
+         <font>
+            <Font name="Segoe UI Semibold" size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="deleteMedocButton" layoutX="855.0" layoutY="644.0" mnemonicParsing="false" onAction="#deleteMedocButtonOnClick" prefHeight="25.0" prefWidth="89.0" style="-fx-background-color: #f1f822; -fx-background-radius: 20;" text="Supprimer" />
+      <Button fx:id="confirmerQuantitesButton" layoutX="583.0" layoutY="644.0" mnemonicParsing="false" onAction="#confirmerQuantitesButtonOnClick" prefHeight="25.0" prefWidth="131.0" style="-fx-background-color: #f1f822; -fx-background-radius: 10;" text="Confirmer Quantites" />
+   </children>
+</AnchorPane>
